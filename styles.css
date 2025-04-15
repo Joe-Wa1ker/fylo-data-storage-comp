@@ -1,0 +1,247 @@
+/* raleway-regular - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./Fonts/raleway-v34-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* raleway-700 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 700;
+    src: url('./Fonts/raleway-v34-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  
+  /*=====================*/
+  /*===== CSS Reset =====*/
+  /*=====================*/
+  
+  *, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  } 
+  
+  /*=============================*/
+  /*===== Custom Properties =====*/
+  /*=============================*/
+  
+  :root {
+    --gradient-start: hsl(6, 100%, 80%);
+    --gradient-end: hsl(335, 100%, 65%);
+    --pale-blue: hsl(243, 100%, 93%);
+    --grayish-blue: hsl(229, 7%, 55%);
+    --dark-blue: hsl(228, 56%, 26%);
+    --very-dark-blue: hsl(229, 57%, 11%);
+  }
+  
+  /*=================================*/
+  /*===== Mobile Styles - 375px =====*/
+  /*=================================*/
+  
+  body {
+    min-height: 100vh;
+    background-image: url(./Images/bg-mobile.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--very-dark-blue);
+    font-family: 'Raleway', sans-serif;
+    color: var(--pale-blue);
+    display: flex;
+    align-items: center;
+  }
+  
+  main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+  }
+  
+  .wrapper {
+    background-color: var(--dark-blue);
+    width: 90%;
+    max-width: 387px;
+    border-radius: 0.5em;
+    display: flex;
+  }
+  
+  /*===== Wrapper one =====*/
+  
+  .one {
+    flex-direction: column;
+    padding: 1.5em 1.5em 1.5em 2.5em;
+    border-radius: 0.5em 6em 0.5em 0.5em;
+    gap: 1.75em;
+  }
+  
+  .one > img {
+    width: 8.5em;
+    margin-top: 1em;
+  }
+  
+  .icon-container {
+    display: flex;
+    width: 87.5%;
+    gap: 1em;
+  }
+  
+  .icon-container img {
+    background: var(--very-dark-blue);
+    width: 21%;
+    max-width: 50.25px;
+    padding: 1em;
+    margin-bottom: 1em;
+    border-radius: 0.7em;
+  }
+  
+  /*===== Wrapper two =====*/
+  
+  .two {
+    flex-direction: column;
+    gap: 0.75em;
+    text-align: center;
+    padding: 0 2.5em 3.5em;
+    position: relative;
+  }
+  
+  .used-summary {
+    margin-top: 2em;
+    font-size: 0.9rem;
+  }
+  
+  .used-summary span {
+    font-weight: 700;
+  }
+  
+  .bar {
+    margin: 0 auto;
+    width: 100%;
+    height: 1rem;
+    border-radius: 2rem;
+    background-color: var(--very-dark-blue);
+    border: 2px solid var(--very-dark-blue);
+    opacity: 0.8;
+  }
+  
+  .bar-progress {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 81.5%;
+    height: 100%;
+    border-radius: 2rem;
+    background: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+  }
+  
+  .bar-dot {
+    height: 0.7rem;
+    width: 0.7rem;
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid var(--gradient-start);
+  }
+  
+  .axis-figures {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+  
+  .remaining-summary {
+    background-color: white;
+    width: 50%;
+    padding: 5%;
+    border-radius: 0.75rem;
+    font-size: 2rem;
+    position: absolute;
+    top: 77.44%;
+    left: 25%;
+  }
+  
+  .remaining-summary span:nth-child(1) {
+    font-weight: 700;
+    color: var(--dark-blue);
+  }
+  
+  .remaining-summary span:nth-child(2) {
+    font-size: 0.8rem;;
+    font-weight: 700;
+    color: var(--grayish-blue);
+    text-transform: uppercase;
+    vertical-align: middle;
+  }
+  
+  /*=======================================*/
+  /*===== Large Mobile Styles - 376px =====*/
+  /*=======================================*/
+  
+  @media screen and (min-width: 376px) {
+    body {
+      background-image: url(./Images/bg-desktop.png); 
+      background-color: var(--very-dark-blue);
+      background-repeat: space;
+      background-position: center;
+    }
+  }
+  
+  /*==================================*/
+  /*===== Desktop Styles - 1224px =====*/
+  /*==================================*/
+  
+  @media screen and (min-width: 1224px) {
+    body {
+      background-image: url(./Images/bg-desktop.png); 
+      background-color: var(--very-dark-blue);
+      background-position: bottom;
+      background-repeat: repeat-x;
+    }
+  
+    main {
+      flex-direction: row;
+      justify-content: center;
+      align-items: end;
+      gap: 2em;
+    }
+  
+    .wrapper { 
+      max-width: 576px;
+    }
+  
+    .one {
+      width: 22.5%;
+    }
+  
+    .two {
+      width:40%;
+      padding-bottom: 2.5em;
+    }
+  
+    .used-summary {
+      text-align: left;
+    }
+  
+    .remaining-summary {
+      padding: 2% 1%;
+      border-radius: 0.5rem;
+      width: 25%;
+      top: -27%;
+      left: 68%;
+    }
+  
+    .remaining-summary-shape {
+      width: 0;
+      height: 0;
+      border-top: 28px solid white;
+      border-left: 28px solid transparent;
+      position: absolute;
+      right: 7%;
+      top: 10%;
+    }
+  }
+  
